@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Telegraph||PromoCODES!</title>
+        <link href = "style.css" rel = "stylesheet">
+    </head>
+<body><br><br><br><br><br><br><br><br>
+    <div id = "main">
+<h1>FREE Chat Spaces</h1>
+<br>
+<p>Press the button below to get 2 free chat spaces!</p><br><br>
+<button onclick = "redeem()">Redeem</button>
+    </div>
+    <script>
+        var userstat = localStorage.getItem("Telegraph||UserStat");  
+     
+        var redeemed = document.cookie;
+        function redeem() {
+            
+            if (userstat == undefined) {
+                window.alert("First log into the telegraph app!");
+            }else {
+                if (redeemed == '') {
+                   
+                     //window.alert("You thought you could redeem it again? Well sorry that's not how it works.");
+                     localStorage.setItem("Telegraph||UserStat",parseInt(userstat) + parseInt(2) );
+                    document.cookie = "inp";
+                    redeemed = document.cookie;
+                    window.alert("You redeemed the code and got 2 ChatSpaces");
+                }else {
+                    window.alert("You thought you could redeem it again? Well sorry that's not how it works.");
+                    
+                }
+            }
+        }
+    </script>
+</body>
+</html>
